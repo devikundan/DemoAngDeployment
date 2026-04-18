@@ -4,9 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+     "build:gh": "ng build --configuration production --base-href '/DemoAngDeployment/' && cp dist/DemoAngDeployment/index.html dist/DemoAngDeployment/404.html",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
+   
   },
   "private": true,
   "dependencies": {
