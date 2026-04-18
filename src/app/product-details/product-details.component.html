@@ -1,0 +1,66 @@
+<div *ngIf="product() as p" class="details">
+
+  <!-- LEFT: IMAGE SLIDER -->
+  <div class="image-section">
+    <img [src]="selectedImage()" class="main-img" />
+
+    <div class="thumbnails">
+      <img *ngFor="let img of images; let i = index"
+           [src]="img"
+           (click)="selectImage(img)"
+           [class.active]="img === selectedImage()" />
+    </div>
+  </div>
+
+  <!-- RIGHT: PRODUCT INFO -->
+  <div class="info">
+    <h2>{{ p.name }}</h2>
+    <p class="price">₹{{ p.price }}</p>
+
+    <p>⭐ Rating: {{ p.rating }}</p>
+
+    <!-- Quantity -->
+    <div class="qty">
+      <button (click)="decrease()">-</button>
+      {{ qty() }}
+      <button (click)="increase()">+</button>
+    </div>
+
+    <button class="buy" (click)="buy(p)">Buy Now</button>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <button (click)="activeTab.set('desc')" [class.active]="activeTab() === 'desc'">Description</button>
+      <button (click)="activeTab.set('spec')" [class.active]="activeTab() === 'spec'">Specifications</button>
+      <button (click)="activeTab.set('review')" [class.active]="activeTab() === 'review'">Reviews</button>
+    </div>
+
+    <!-- TAB CONTENT -->
+    <div class="tab-content">
+
+      <!-- Description -->
+      <div *ngIf="activeTab() === 'desc'">
+        <p>{{ p.desc }}</p>
+      </div>
+
+      <!-- Specifications -->
+      <div *ngIf="activeTab() === 'spec'">
+        <ul>
+          <li>Brand: DemoBrand</li>
+          <li>Model: {{ p.name }}</li>
+          <li>Price: ₹{{ p.price }}</li>
+          <li>Warranty: 1 Year</li>
+        </ul>
+      </div>
+
+      <!-- Reviews -->
+      <div *ngIf="activeTab() === 'review'">
+        <p>⭐ 4.5/5 - Very good product!</p>
+        <p>⭐ 4/5 - Value for money</p>
+        <p>⭐ 5/5 - Excellent quality</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,22 @@
+
+ 
+<p (click)="navigateToCart()"
+   style="float:right; color:red; font-size:x-large;"
+   class="card">
+  Cart Items: {{ cart().length }}
+</p>
+<!-- ✅ Search -->
+<app-search (search)="onSearch($event)"></app-search>
+
+<!-- ✅ No products found -->
+<div *ngIf="filteredProducts().length === 0">
+  <p style="color:red; font-weight:bold;">No products found</p>
+</div>
+
+<!-- ✅ Product list -->
+<div class="grid" *ngIf="filteredProducts().length > 0">
+  <app-product-card
+    *ngFor="let p of filteredProducts(); trackBy: trackById"
+    [product]="p">
+  </app-product-card>
+</div>
