@@ -81,3 +81,16 @@
 .pay-btn:hover {
   background-color: #218838;
 }
+
+.delete-btn {
+  margin-top: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}

@@ -13,6 +13,13 @@
             <button (click)="decreaseQty(item)">-</button>
             <span>{{ item.qty }}</span>
             <button (click)="increaseQty(item)">+</button>
+
+             <!-- ✅ DELETE BUTTON -->
+    <button (click)="removeItem(item)">
+      ❌  
+    </button>
+
+    
           </div>
           <p>Subtotal: ₹{{ item.price * item.qty }}</p>
         </div>
@@ -28,4 +35,6 @@
   <ng-template #emptyCart>
     <p>Your cart is empty. Add items to continue.</p>
   </ng-template>
+
+  
 </div>
