@@ -2,8 +2,7 @@ import { Routes } from '@angular/router';
 import { DemoComponent } from './demo/demo.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'demo', pathMatch: 'full' },
-  { path: 'demo', component: DemoComponent },
+   { path: 'demo', component: DemoComponent },
   {
     path: 'products',
     loadComponent: () =>
@@ -21,5 +20,6 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./cart-item/cart-item.component')
         .then(m => m.CartItemComponent)
-  }
+  },
+   { path: '', redirectTo: 'demo', pathMatch: 'full' },
 ];
