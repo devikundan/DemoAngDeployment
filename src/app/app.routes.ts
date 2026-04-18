@@ -21,5 +21,5 @@ export const routes: Routes = [
       import('./cart-item/cart-item.component')
         .then(m => m.CartItemComponent)
   },
-   { path: '', redirectTo: 'demo', pathMatch: 'full' },
+   { path: '', redirectTo: '/demo', pathMatch: 'full' },
 ];
