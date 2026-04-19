@@ -10,7 +10,13 @@ export const routes: Routes = [
         .then(m => m.ProductsComponent)
   },
   {
-    path: 'products/:id',
+    path: 'productslist/:id',
+    loadComponent: () =>
+      import('./productlist/productlist.component')
+        .then(m => m.ProductListComponent)
+  },
+    {
+    path: 'productsdetails/:pid',
     loadComponent: () =>
       import('./product-details/product-details.component')
         .then(m => m.ProductDetailsComponent)
@@ -21,5 +27,5 @@ export const routes: Routes = [
       import('./cart-item/cart-item.component')
         .then(m => m.CartItemComponent)
   },
-   { path: '', redirectTo: '/demo', pathMatch: 'full' },
+   { path: '', redirectTo: 'demo', pathMatch: 'full' },
 ];

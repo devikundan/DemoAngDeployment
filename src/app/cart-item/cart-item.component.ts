@@ -37,6 +37,9 @@ export class CartItemComponent implements OnInit {
     alert('Redirecting to payment gateway...');
   }
 
+  backtoshoping() {
+    this.router.navigate(['/products']);
+  }
   increaseQty(item: any) {
     item.qty++;
     this.calculateTotal();

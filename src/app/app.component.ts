@@ -1,4 +1,3 @@
-// app.component.ts
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 
@@ -6,14 +5,17 @@ import { Router, RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
-  template: `
-    <h1 class="card" (click)="onTitleClick()">Kundan Store</h1>
-    <router-outlet></router-outlet>
-  `
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']  // ✅ fixed
 })
 export class AppComponent {
+logoPath: string = 'assets/images/krishanlogo.jpeg';
   constructor(private router: Router) {}
+
+  ngOnInit() {
+   
+  }
   onTitleClick() {
-     this.router.navigate(['/products']);
+    this.router.navigate(['/products']); // ✅ navigation correct
   }
 }

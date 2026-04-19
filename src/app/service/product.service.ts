@@ -5,45 +5,91 @@ import { Injectable, signal } from '@angular/core';
 export class ProductService {
   items = signal<any[]>([]);
   products = signal<any[]>([]);
+  productslist = signal<any[]>([]);
   cart = signal<any[]>([]);
 
   loadProducts() {
   const dummyData = [
     {
       id: 1,
-      name: 'Laptop',
-      price: 75000,
-      image: 'https://m.media-amazon.com/images/I/810mOX5-LyL._AC_.jpg'
+      name: 'Ganesha-festival-jercy-tshirt',
+      TotalProduct: 40,
+      image: 'https://ossublimation.com/wp-content/uploads/2024/07/450656202_1146558316633026_578461332377521063_n.heic_.jpg'
     },
     {
       id: 2,
-      name: 'Mobile',
-      price: 25000,
-      image: 'https://cdn.beebom.com/mobile/vivo-y400-pro-front-back.png'
+      name: 'Track-pants',
+      TotalProduct: 60,
+      image: 'https://ossublimation.com/wp-content/uploads/2025/04/pant-mokup-1536x1086.jpg'
     },
     {
       id: 3,
-      name: 'Headphones',
-      price: 3000,
-      image: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6572/6572447_sd.jpg'
+      name: 'Hoodie-pull-over-cotton',
+      TotalProduct: 50,
+      image: 'https://ossublimation.com/wp-content/uploads/2022/09/hoodie-pull-over-cotton.jpeg'
     },
     {
       id: 4,
-      name: 'Keyboard',
-      price: 1500,
-      image: 'https://static1.pocketlintimages.com/wordpress/wp-content/uploads/148512-laptops-news-buyer-s-guide-best-keyboards-image18-1s9lsdfnrj.jpg'
+      name: 'TRACK-SUIT-UPPER',
+      TotalProduct: 80,
+      image: 'https://ossublimation.com/wp-content/uploads/2022/09/TRACK-SUIT-UPPER.jpeg'
     },
     {
       id: 5,
-      name: 'Mouse',
-      price: 800,
-      image: 'https://m.media-amazon.com/images/I/61YQeAUIboL._AC_.jpg'
+      name: 'cotton-polo',
+      TotalProduct: 20,
+      image: 'https://ossublimation.com/wp-content/uploads/2022/09/cotton-polo.jpeg'
     }
-    
+     
   ];
 
   
   this.products.set(dummyData);
+ 
+}
+
+loadProductslist() {
+  const dummyData = [
+    {
+      id: 1,
+       pid: 1,
+      name: 'Ganesha-festival-jercy-tshirt',
+      TotalProduct: 40,
+      image: 'https://ossublimation.com/wp-content/uploads/2024/07/450656202_1146558316633026_578461332377521063_n.heic_.jpg'
+    },
+    {
+      id: 1,
+       pid: 2,
+      name: 'Track-pants',
+      TotalProduct: 60,
+      image: 'https://ossublimation.com/wp-content/uploads/2025/04/pant-mokup-1536x1086.jpg'
+    },
+    {
+      id: 1,
+        pid: 3,
+      name: 'Hoodie-pull-over-cotton',
+      TotalProduct: 50,
+      image: 'https://ossublimation.com/wp-content/uploads/2022/09/hoodie-pull-over-cotton.jpeg'
+    },
+    {
+      id: 1,
+      pid: 4,
+      name: 'TRACK-SUIT-UPPER',
+      TotalProduct: 80,
+      image: 'https://ossublimation.com/wp-content/uploads/2022/09/TRACK-SUIT-UPPER.jpeg'
+    },
+    {
+      id: 2,
+        pid: 1,
+      name: 'cotton-polo',
+      TotalProduct: 20,
+      image: 'https://ossublimation.com/wp-content/uploads/2022/09/cotton-polo.jpeg'
+    }
+     
+  ];
+
+  
+  this.productslist.set(dummyData);
  
 }
 
