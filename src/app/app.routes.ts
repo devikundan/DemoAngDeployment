@@ -1,9 +1,8 @@
-import { Routes } from '@angular/router';
-import { DemoComponent } from './demo/demo.component';
-
 export const routes: Routes = [
-    { path: '', component: DemoComponent,pathMatch: 'full' },
-   { path: 'demo', component: DemoComponent },
+  { path: '', redirectTo: 'demo', pathMatch: 'full' },
+
+  { path: 'demo', component: DemoComponent },
+
   {
     path: 'products',
     loadComponent: () =>
@@ -16,7 +15,7 @@ export const routes: Routes = [
       import('./productlist/productlist.component')
         .then(m => m.ProductListComponent)
   },
-    {
+  {
     path: 'productsdetails/:pid',
     loadComponent: () =>
       import('./product-details/product-details.component')
@@ -28,5 +27,7 @@ export const routes: Routes = [
       import('./cart-item/cart-item.component')
         .then(m => m.CartItemComponent)
   },
-   { path: '', redirectTo: 'demo', pathMatch: 'full' },
+
+  // ✅ fallback route
+  { path: '**', redirectTo: 'demo' }
 ];
