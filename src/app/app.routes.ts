@@ -1,33 +1,30 @@
+import { Routes } from '@angular/router';
+import { DemoComponent } from './demo/demo.component';
+
 export const routes: Routes = [
   { path: '', redirectTo: 'demo', pathMatch: 'full' },
-
   { path: 'demo', component: DemoComponent },
 
   {
     path: 'products',
     loadComponent: () =>
-      import('./products/products.component')
-        .then(m => m.ProductsComponent)
+      import('./products/products.component').then(m => m.ProductsComponent)
   },
   {
     path: 'productslist/:id',
     loadComponent: () =>
-      import('./productlist/productlist.component')
-        .then(m => m.ProductListComponent)
+      import('./productlist/productlist.component').then(m => m.ProductListComponent)
   },
   {
     path: 'productsdetails/:pid',
     loadComponent: () =>
-      import('./product-details/product-details.component')
-        .then(m => m.ProductDetailsComponent)
+      import('./product-details/product-details.component').then(m => m.ProductDetailsComponent)
   },
   {
     path: 'cart-item',
     loadComponent: () =>
-      import('./cart-item/cart-item.component')
-        .then(m => m.CartItemComponent)
+      import('./cart-item/cart-item.component').then(m => m.CartItemComponent)
   },
 
-  // ✅ fallback route
   { path: '**', redirectTo: 'demo' }
 ];
