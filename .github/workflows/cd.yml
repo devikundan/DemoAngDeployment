@@ -27,6 +27,9 @@ jobs:
       - name: Build Angular app
         run: npm run build --base-href="/DemoAngDeployment/"
 
+      - name: Add SPA fallback
+        run: cp dist/DemoAngDeployment/browser/index.html dist/DemoAngDeployment/browser/404.html
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
